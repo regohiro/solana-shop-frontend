@@ -13,11 +13,28 @@ jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
+
+    env:
+      NEXT_PUBLIC_RPC_URL: https://api.devnet.solana.com
+      NEXT_PUBLIC_IPFS_CLIENT: https://ipfs.infura.io:5001/api/v0
+      NEXT_PUBLIC_PROGRAM_ID: 5VggK8ZBCDGCRQ9PruBwfTr6u6RweXKxHJpkEcrqk5W7
+      NEXT_PUBLIC_TOKEN_MINT: 4WLwv2kEBh9hMFRgHewBvtFvsDfoXZhsiGLVUVXqL4YV
+      NEXT_PUBLIC_BACKEND_API: https://solanashop-backend.azurewebsites.ne
+
     name: Build and Deploy Job
     steps:
       - uses: actions/checkout@v2
         with:
           submodules: true
+
+      - name: Set up Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+
+      - name: Install dependencies
+        run: yarn
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
