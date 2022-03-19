@@ -19,7 +19,7 @@ jobs:
       NEXT_PUBLIC_IPFS_CLIENT: https://ipfs.infura.io:5001/api/v0
       NEXT_PUBLIC_PROGRAM_ID: 5VggK8ZBCDGCRQ9PruBwfTr6u6RweXKxHJpkEcrqk5W7
       NEXT_PUBLIC_TOKEN_MINT: 4WLwv2kEBh9hMFRgHewBvtFvsDfoXZhsiGLVUVXqL4YV
-      NEXT_PUBLIC_BACKEND_API: https://solanashop-backend.azurewebsites.ne
+      NEXT_PUBLIC_BACKEND_API: https://solanashop-backend.azurewebsites.net
 
     name: Build and Deploy Job
     steps:
