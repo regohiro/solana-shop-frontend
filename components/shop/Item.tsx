@@ -35,6 +35,7 @@ const Item: React.FC<ItemProps> = ({
   const [signature, setSignature] = useState("");
   const [confirmations, setConfirmations] = useState(0);
   const [reference, setReference] = useState<PublicKey | undefined>(undefined);
+  const [confirming, setConfirming] = useState(false);
   const progress = useMemo(() => (confirmations / 10) * 100, [confirmations]);
   const notify = useNotify();
   const store = useStore();
@@ -85,7 +86,8 @@ const Item: React.FC<ItemProps> = ({
   }, [qrMessage, provider, reference]);
 
   useEffect(() => {
-    if (signature && provider) {
+    if (signature && provider && confirming === false) {
+      setConfirming(true);
       const interval = setInterval(async () => {
         try {
           const res = await provider.connection.getSignatureStatus(signature);
@@ -94,6 +96,7 @@ const Item: React.FC<ItemProps> = ({
             clearInterval(interval);
             setConfirmations(0);
             setQrMessage("");
+            setConfirming(false);
           } else {
             setConfirmations(status?.confirmations || 0);
           }
@@ -102,6 +105,7 @@ const Item: React.FC<ItemProps> = ({
         }
       }, 100);
       return () => {
+        setConfirming(false);
         clearInterval(interval);
       };
     }
