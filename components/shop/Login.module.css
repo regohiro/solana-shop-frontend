@@ -1,0 +1,30 @@
+.loginBox {
+  padding: 20px;
+}
+
+.loginBox h3 {
+  margin-left: 5px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.loginButton {
+  display: block;
+  margin: 0px auto;
+  margin-top: 15px;
+  width: 100%;
+  font: inherit;
+  cursor: pointer;
+  background-color: #77002e;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #77002e;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #a50e48;
+  border-color: #a50e48;
+}

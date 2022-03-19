@@ -1,0 +1,11 @@
+.buttonBox {
+  display : flex;
+  justify-content : center;
+  align-items : center;
+}
+
+.buttonBox ul {
+  margin-top: 30px;
+  transform: scale(1.2);
+  right: -40px
+}

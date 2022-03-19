@@ -1,0 +1,17 @@
+.footer {
+  clear: both;
+  padding: 0;
+  vertical-align: middle;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  opacity: 0.5;
+  padding-bottom: 15px; 
+}
+
+#creator {
+  float: left;
+  padding-left: 20px;
+}
+

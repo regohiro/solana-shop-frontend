@@ -1,0 +1,14 @@
+.camera {
+  /* border: 1px solid powderblue; */
+  margin-top: 10px;
+}
+
+.camera h3 {
+  text-align: center;
+}
+
+.bottom {
+  /* position: fixed; */
+  bottom: 120px;
+  width: 100%
+}
